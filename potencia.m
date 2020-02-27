@@ -1,5 +1,4 @@
 function [lambda,V]=potencia (A , x , epsilon , max1 ) 
-
   lambda=0;
   cnt=0;
   err=1;
@@ -21,6 +20,5 @@ function [lambda,V]=potencia (A , x , epsilon , max1 )
     cnt=cnt+1;
   endwhile
   V=x
-  lambda
 endfunction
 

@@ -1,14 +1,15 @@
-
-
-function gaus(a,b)
-  [m n]=size(a);
-  x(n)=b(n)/a(n,n);
-  for i=(n-1):-1:1
-    s=b(i);
-    for k=i+1:n;
-      s=s-a(i,k)*x(k);
+function retval = gaus (a)
+  [h r] = size(a);
+  m=eye(h);
+  for k=1:(h-1)
+    for i=(k+1):h
+      m(i,k)=a(i,k)/a(k,k);
+      for j=i:h
+        a(i,j)=-m(i,k)*a(k,j)+a(i,j);
+        a(i,k)=0;
+      end
     end
-    x(i)=s/a(i,i);
   end
-  x
+  m
+
 endfunction
